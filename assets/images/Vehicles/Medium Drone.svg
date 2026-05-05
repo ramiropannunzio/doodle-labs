@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 2931 2899">
+  <!-- Generator: Adobe Illustrator 29.8.2, SVG Export Plug-In . SVG Version: 2.1.1 Build 3)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: none;
+      }
+
+      .st1 {
+        fill: #d9d9d9;
+      }
+
+      .st2, .st3 {
+        fill: #fff;
+      }
+
+      .st4 {
+        fill: url(#linear-gradient1);
+        fill-opacity: .06;
+      }
+
+      .st5 {
+        fill: #bf5353;
+      }
+
+      .st3 {
+        fill-opacity: .1;
+      }
+
+      .st6 {
+        fill: url(#linear-gradient);
+        fill-opacity: .3;
+      }
+
+      .st7 {
+        fill: #ea8b8b;
+      }
+    </style>
+    <clipPath id="clippath">
+      <circle class="st0" cx="1896.2" cy="1765.84" r="183.6"/>
+    </clipPath>
+    <clipPath id="clippath-3">
+      <path class="st0" d="M851,1133.6c0,101.4,82.47,183.6,184.2,183.6s184.2-82.2,184.2-183.6-82.47-183.6-184.2-183.6c-101.73,0-184.2,82.2-184.2,183.6Z"/>
+    </clipPath>
+    <clipPath id="clippath-6">
+      <ellipse class="st0" cx="1896.8" cy="1133.6" rx="183" ry="183.6"/>
+    </clipPath>
+    <clipPath id="clippath-9">
+      <circle class="st0" cx="1034.6" cy="1765.84" r="183.6"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="3531.2" y1="1736.8" x2="3533.84" y2="914.36" gradientTransform="translate(2647.36 4995.71) rotate(-90) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient1" x1="3534.2" y1="1482.49" x2="3534.2" y2="1035.93" gradientTransform="translate(2728.01 4996.92) rotate(-90) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#000"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <path class="st3" d="M42,40v1h2847v-2H42v1ZM2891,42h-1v2815h2V42h-1ZM2889,2859v-1H42v2h2847v-1ZM40,2857h1V42h-2v2815h1ZM42,2859v-1c-.55,0-1-.45-1-1h-2c0,1.66,1.34,3,3,3v-1ZM2891,2857h-1c0,.55-.45,1-1,1v2c1.66,0,3-1.34,3-3h-1ZM2889,40v1c.55,0,1,.45,1,1h2c0-1.66-1.34-3-3-3v1ZM42,40v-1c-1.66,0-3,1.34-3,3h2c0-.55.45-1,1-1v-1Z"/>
+  <path class="st2" d="M1938.03,1830.71l-392.31-392.3,22.02-22.02,392.3,392.31-22.01,22.01Z"/>
+  <g>
+    <circle class="st1" cx="1896.2" cy="1765.84" r="183.6"/>
+    <circle class="st2" cx="1896.2" cy="1765.84" r="183.6"/>
+    <circle class="st0" cx="1896.2" cy="1765.84" r="183.6"/>
+  </g>
+  <path class="st2" d="M992.77,1069.76l392.31,392.3-22.02,22.02-392.3-392.31,22.02-22.01Z"/>
+  <g>
+    <ellipse class="st1" cx="1035.2" cy="1133.6" rx="184.2" ry="183.6"/>
+    <ellipse class="st2" cx="1035.2" cy="1133.6" rx="184.2" ry="183.6"/>
+    <ellipse class="st0" cx="1035.2" cy="1133.6" rx="184.2" ry="183.6"/>
+  </g>
+  <path class="st2" d="M1938.03,1069.76l-392.31,392.3,22.02,22.01,392.3-392.3-22.01-22.01Z"/>
+  <g>
+    <ellipse class="st1" cx="1896.8" cy="1133.6" rx="183" ry="183.6"/>
+    <ellipse class="st2" cx="1896.8" cy="1133.6" rx="183" ry="183.6"/>
+    <ellipse class="st0" cx="1896.8" cy="1133.6" rx="183" ry="183.6"/>
+  </g>
+  <path class="st2" d="M992.77,1830.71l392.31-392.3-22.02-22.01-392.3,392.3,22.02,22.01Z"/>
+  <g>
+    <circle class="st1" cx="1034.6" cy="1765.84" r="183.6"/>
+    <circle class="st2" cx="1034.6" cy="1765.84" r="183.6"/>
+    <circle class="st0" cx="1034.6" cy="1765.84" r="183.6"/>
+  </g>
+  <g>
+    <rect class="st5" x="1204.59" y="1330.31" width="528.41" height="264.81" rx="38.52" ry="38.52"/>
+    <rect class="st2" x="1204.59" y="1330.31" width="528.41" height="264.81" rx="38.52" ry="38.52"/>
+    <rect class="st6" x="1204.59" y="1330.31" width="528.41" height="264.81" rx="38.52" ry="38.52"/>
+  </g>
+  <path class="st2" d="M1336.99,1595.12v-264.8h263.61v264.8h-263.61Z"/>
+  <g>
+    <rect class="st7" x="1245.52" y="1370.03" width="446.56" height="185.36" rx="26.48" ry="26.48"/>
+    <rect class="st2" x="1245.52" y="1370.03" width="446.56" height="185.36" rx="26.48" ry="26.48"/>
+    <rect class="st4" x="1245.52" y="1370.03" width="446.56" height="185.36" rx="26.48" ry="26.48"/>
+  </g>
+</svg>
