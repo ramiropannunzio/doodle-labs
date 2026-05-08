@@ -265,6 +265,34 @@ body{
 	filter: none;
 }
 
+/* === DOODLE ADVANTAGE — CARDS ONLY === */
+.advantage-cards{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 20px;
+	margin-top: 40px;
+}
+
+.advantage-card{
+	background-color: var(--surface-elevated);
+	padding: 28px;
+	text-align: left;
+}
+
+.advantage-card-title{
+	font-family: var(--font-medium);
+	font-size: 28px;
+	color: var(--text-primary);
+	margin-bottom: 16px;
+}
+
+.advantage-card-desc{
+	font-family: var(--font-book);
+	font-size: 18px;
+	line-height: 150%;
+	color: var(--text-primary);
+}
+
 /* === DOODLE ADVANTAGE === */
 .advantage-section{
 	background-color: var(--surface-hero);
