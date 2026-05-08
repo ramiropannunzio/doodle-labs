@@ -1,8 +1,8 @@
 # Doodle Labs Product Pages — Dark Mode Changelog
-**Page:** Nano (direction page for Milestone 1)
-**Date:** 2026-05-04
-**Baseline:** `stylev12.css` (light mode) + `nano.html` (original)
-**Output:** `stylev12-dark.css` + `nano.html` (dark mode, updated copy)
+**Pages:** All 7 — Boost, Mini, Nano, Nano², Nimble, OEM, Wearable
+**Date:** 2026-05-04 → 2026-05-08
+**Baseline:** `stylev12.css` (light mode) + 7 original HTML files
+**Output:** `stylev12-dark.css` (shared) + 7 dark mode HTML files in `5 - Doodle Labs - Doodle Labs - iPad Updates/`
 
 ---
 
@@ -12,27 +12,34 @@
 |---|---|---|---|
 | `--surface-body` | `#E7F4FB` | `#222222` (Gray 4) | Body / alternating section bg |
 | `--surface-hero` | `herobkg.png` (gradient image) | `#000000` (Black) | Hero + alternating section bg |
-| `--surface-elevated` | `white` | `#222222` | Accordion cards, form container |
+| `--surface-elevated` | `white` | `#222222` | Advantage cards, form container |
 | `--surface-spec-pill` | `#F7F7F7` | `#333333` | Spec row title + value blocks, form inputs |
-| `--surface-callout` | gradient fill (12% opacity) | `#6A6A6A` (Gray 3) | Category title pills, accordion active state, use case label |
+| `--surface-callout` | gradient fill (12% opacity) | `#6A6A6A` (Gray 3) | Category title pills |
 | `--surface-callout-light` | n/a | `#EEEEEE` (Gray 1) | Deployed by section (inverted) |
 | `--text-primary` | `#212323` | `#FFFFFF` | All text on dark surfaces |
 | `--text-on-light` | n/a | `#000000` | Text on light callout surfaces |
-| `--border-subtle` | `#d7d7d7` | `#FFFFFF` | Section dividers (currently unused on cards) |
-| `--border-input` | `#d7d7d7` | `#FFFFFF` | Form input borders (currently removed) |
+| `--border-subtle` | `#d7d7d7` | `#FFFFFF` | Currently unused (borders removed from cards and inputs) |
+| `--border-input` | `#d7d7d7` | `#FFFFFF` | Currently unused (input borders removed) |
 
 ---
 
-## 2. Gradient usage — reduced to 2 moments
+## 2. Gradient usage — reduced to 1 moment
 
 | Element | Original | Dark mode |
 |---|---|---|
 | Hero background | Full gradient image (`herobkg.png`) | Flat `#000000` — no gradient |
 | Category pills (`.atributes-title`) | Gradient fill (pink-orange-cyan) | Solid `#6A6A6A` (Gray 3) |
-| Accordion active state (`.vantage-background`) | Gradient at 12% opacity | Solid `#6A6A6A` |
-| "Commonly used in" box border | 4-side gradient border | **Kept:** 1px gradient `border-top` only |
-| Common-line separators | Gradient line | Solid `rgba(255,255,255,0.12)` |
-| Form CTA (`.form-btn`) | Gradient fill | **Kept:** gradient fill (conversion point) |
+| Accordion active state | Gradient at 12% opacity | N/A — accordion removed, replaced by static cards |
+| "Commonly used in" box border | 4-side gradient border | N/A — section removed |
+| Common-line separators | Gradient line | N/A — section removed |
+| Form CTA (`.form-btn`) | Gradient fill (pink-orange-cyan) | **Pechella/Solvyn gradient** (`#EDB950` → `#FFEA9E`) — the only gradient moment |
+
+### CTA states
+
+| State | Treatment |
+|---|---|
+| Default | `linear-gradient(90deg, #EDB950 0%, #FFEA9E 100%)` with black text |
+| Hover / Active | Solid `#FFEA9E` (Solvyn) with black text |
 
 ---
 
@@ -46,13 +53,11 @@
 | Section border-radius | `32px` on all section cards | `0` everywhere |
 | Section gaps | `65px` margin-top between cards | `0` — flush sections, bg contrast separates |
 
-### Section background alternation
+### Section background alternation (current, post-removal of Commonly Used In and Use Case)
 
 | Section | Background |
 |---|---|
 | Hero | `#000000` |
-| Commonly used in | `#222222` + 1px gradient top border |
-| Use case | `#000000` |
 | Deployed by | `#EEEEEE` (inverted callout) |
 | Doodle advantage | `#000000` |
 | Technical features | `#222222` |
@@ -62,31 +67,21 @@
 
 ## 4. Border-radius — all removed
 
-Every `border-radius` value set to `0`. Affected selectors:
-- `.hero-holder`, `.commonly`, `.usecase`, `.advantage-section`, `.technical-section`, `.footer` (were `32px`)
-- `.use-clip`, `.vantage-video`, `.vantage-video-holder` (were `20px`)
-- `.vantage-holder`, `.vantage-background` (were `14px`)
-- `.atributes-container`, `.form-container` (were `23px`)
-- `.popup` (was `22px`)
-- `.atributes-title` (was `200px` pill)
-- `.atr-title`, `.atr-value`, `.form-btn` (were `999px` pill)
-- `input` (was `10px`)
+Every `border-radius` value set to `0`. Sharp corners throughout per brand guidelines.
 
 ---
 
-## 5. Typography — prepared for Gotham swap
+## 5. Typography — Gotham implemented
 
-All `font-family` declarations migrated to CSS custom properties:
+Gotham font files (Book/Medium/Bold) sourced from `05-CreativeOps/Clients/Doodle Labs/Brand/Assets/Font/` and copied to `assets/fonts/`.
 
-| Variable | Current fallback | Target (pending font files) |
+| Variable | Value | Role |
 |---|---|---|
-| `--font-bold` | Segoe700 | Gotham Bold |
-| `--font-medium` | Segoe700 | Gotham Medium |
-| `--font-book` | Segoe400 | Gotham Book |
-| `--font-ui` | Inter400 | Gotham Book |
-| `--font-ui-bold` | Inter700 | Gotham Medium |
-
-**Blocked on:** client providing Gotham Book/Medium/Bold .otf or .ttf files.
+| `--font-bold` | GothamBold | Hero title, section headings, footer titles |
+| `--font-medium` | GothamMedium | Advantage card titles, spec row labels, category pills |
+| `--font-book` | GothamBook | Hero subtitle, body text, spec values, form labels, CTA |
+| `--font-ui` | GothamBook | Form labels, input text |
+| `--font-ui-bold` | GothamMedium | Hero action CTA, popup text |
 
 ---
 
@@ -95,43 +90,28 @@ All `font-family` declarations migrated to CSS custom properties:
 | Element | Original | Dark mode |
 |---|---|---|
 | Section titles | `text-align: center` | `text-align: left` |
-| Advantage section | `text-align: center` | `text-align: left` |
-| Technical section | `text-align: center` | `text-align: left` |
-| Deployed by title | `text-align: center` | `text-align: left` |
-| Use case title | `text-align: center` | `text-align: left` |
+| All content sections | `text-align: center` | `text-align: left` |
 | Hero title/subtitle | `text-align: center` | `text-align: center` (kept — hero exception) |
 
 ---
 
-## 7. Text case — sentence case per brand guidelines
+## 7. Text case
 
-All headings changed from Title Case to sentence case:
-
-| Original | Updated |
+| Context | Rule |
 |---|---|
-| Commonly Used In | Commonly used in |
-| Use Case | Use case |
-| Deployed By | Deployed by |
-| Doodle Advantage | Doodle advantage |
-| Technical Features | Technical features |
-| Performance Overview | Performance overview |
-| Mesh Rider | Mesh rider |
-| RF Specifications | RF specifications |
-| Hardware Specifications | Hardware specifications |
-| Certifications and Compliance | Certifications and compliance |
-| Save This Page | Save this page |
-| Sign Up To Get In Touch | Sign up to get in touch |
-| → Technical Features | → Technical features |
+| Section headings | Sentence case ("Technical features", "Doodle advantage", "Deployed by", etc.) |
+| Spec row titles | Title Case ("Operating Range", "Max Data Throughput", "Antenna Connectors", etc.) |
+| Hero CTA | Sentence case, arrow removed ("Technical features") |
+| Footer titles | Sentence case ("Save this page", "Sign up to get in touch") |
 
 ---
 
-## 8. Use case section — restructured
+## 8. Sections removed (all 7 pages)
 
-| Change | Original | Dark mode |
-|---|---|---|
-| Title | Large centered text above video | Floating label overlay (top-left, `#6A6A6A` bg, `18px`) |
-| Video | `margin-top: 58px`, padded | Full bleed, `margin: 0`, flush to edges |
-| Section padding | `80px 60px` | `0` (video is full bleed, label is positioned absolute) |
+| Section | Reason |
+|---|---|
+| **Commonly used in** | Removed per client direction |
+| **Use case** (video section) | Removed per client direction |
 
 ---
 
@@ -141,20 +121,33 @@ All headings changed from Title Case to sentence case:
 |---|---|---|
 | Background | No card (on body `#E7F4FB`) | `#EEEEEE` (Gray 1) — inverted moment |
 | Title color | `#212323` | `#000000` |
-| Logo image filter | None needed (dark logos on light) | `filter: none` (needs original dark logos on light bg) |
+| Logo image filter | None needed | `filter: none` |
 
 ---
 
-## 10. Accordion cards (Doodle advantage) — fixes
+## 10. Doodle advantage — redesigned (all 7 pages)
+
+The entire accordion + video layout was replaced with a static card grid.
 
 | Change | Original | Dark mode |
 |---|---|---|
-| Card background | `white` | `#222222` |
-| Card border | `1px solid #d7d7d7` | `none` |
-| Active state bg | Gradient at 12% opacity (translucent) | Solid `#6A6A6A` (opaque) |
-| Text z-index | Not set (OK with translucent bg) | `position: relative; z-index: 1` on title + desc (required for opaque bg) |
-| Plus icon | Black circle, white + (original) | No filter — circle blends into dark bg, white + visible |
-| Minus icon | Black dash | `filter: invert(1)` — white dash on dark |
+| Structure | 3 video groups × 3 accordion cards = 9 items | 6 static cards in 2-column grid |
+| Videos | 3 looping videos (Performance, Scalability, Platform) | Removed |
+| Accordion behavior | Expand/collapse with +/- icons | Removed — all cards always visible |
+| Card background | `white` (collapsed) / gradient tint (expanded) | `#222222` (`--surface-elevated`) |
+| Card borders | `1px solid #d7d7d7` | `none` |
+| Layout | Video (42%) + cards (58%) side by side | 2-column grid, `20px` gap |
+
+### Card content (shared across all 7 pages)
+
+| Card | Description |
+|---|---|
+| EW Resilience | Frequency agility in under 100 ms |
+| Multiband | Up to 9 bands in a single radio |
+| Long Range | Field-proven over 330 km/200 miles |
+| Mesh Network | 100 nodes, self-healing mesh |
+| Scalable | +200k radios annual capacity and 2 week lead times |
+| High Throughput | 80 Mbps single-radio · 150 Mbps dual |
 
 ---
 
@@ -162,9 +155,9 @@ All headings changed from Title Case to sentence case:
 
 | Element | Original | Dark mode |
 |---|---|---|
-| `.atributes-container` | `box-shadow: 0 4px 20px rgba(0,0,0,0.1)` | `none` (removed — invisible on dark bg) |
+| `.atributes-container` | `box-shadow: 0 4px 20px rgba(0,0,0,0.1)` | `none` |
 | `.form-container` | `box-shadow: 0 4px 20px rgba(0,0,0,0.1)` | `none` |
-| `.popup` | `box-shadow: 0 4px 20px rgba(0,0,0,0.1)` | `0 4px 20px rgba(0,0,0,0.4)` (darkened) |
+| `.popup` | `box-shadow: 0 4px 20px rgba(0,0,0,0.1)` | `0 4px 20px rgba(0,0,0,0.4)` |
 
 ---
 
@@ -175,35 +168,62 @@ All headings changed from Title Case to sentence case:
 | `.atributes-container` padding | `24px` | `0` — rows match category title width |
 | `.atributes-container` background | white (implicit) | `transparent` |
 | Category title vs rows | Both similar bg | Category: `#6A6A6A`, Rows: `#333333` — two-level hierarchy |
+| Row height matching | Independent | `align-items: stretch` — both columns always match height |
+| Spec row titles | Mixed case | Title Case enforced across all 7 pages |
+| Frequencies row | Combined Multiband/Single Band in one cell | Split into two rows: "Frequencies (Multiband)" + "Frequencies (Single Band)" |
+| "Max Data Throughout" typo | Present in 4 pages | Corrected to "Max Data Throughput" |
 
 ---
 
-## 13. Video overlay
-
-| Element | Original | Dark mode |
-|---|---|---|
-| `.vantage-video-text` bg | `rgba(255,255,255,0.1)` | `rgba(0,0,0,0.3)` |
-
----
-
-## 14. Form inputs
+## 13. Hero CTA
 
 | Change | Original | Dark mode |
 |---|---|---|
-| Background | white | `#333333` |
-| Border | `1px solid #d7d7d7` | `none` |
-| Text color | dark (inherited) | `#FFFFFF` |
-| Placeholder color | default | `rgba(255,255,255,0.5)` |
+| Text | "→ Technical Features" | "Technical features" (arrow removed, sentence case) |
+| Style | Plain text link | `1px solid white` outline box with padding |
+| Hover/Active | None | Border thickens to `3px` (padding compensated to prevent layout shift) |
 
 ---
 
-## Pending / blocked
+## 14. Form section
 
-| Item | Status | Dependency |
+| Change | Original | Dark mode |
 |---|---|---|
-| Gotham font files (Book/Medium/Bold) | Blocked | Client to provide .otf/.ttf |
-| `NanoBrands.png` dark version on `#EEEEEE` bg | Blocked | Client to provide or rebuild as HTML grid |
-| `Logo-Stacked.svg` light version | Verify | Check if SVG is white or dark |
-| `certifications.png` on dark bg | Verify | May need transparent/dark version |
-| Vehicle SVGs on dark bg | Applied | `filter: brightness(0) invert(1)` |
-| Deployed by logo containers with square corners | Blocked | Need individual logos or new composite asset |
+| "Sign up to get in touch" | Outside `.form-container` | Moved inside `.form-container` |
+| Footer divider | `1px solid` vertical line between QR and form | Removed |
+| Input background | white | `#333333` |
+| Input border | `1px solid #d7d7d7` | `none` |
+| Input text color | dark (inherited) | `#FFFFFF` |
+| Placeholder color | default | `rgba(255,255,255,0.5)` |
+| Required asterisks | `color: red` | `color: white` |
+| CTA gradient | pink-orange-cyan | Pechella → Solvyn (`#EDB950` → `#FFEA9E`) |
+| CTA text color | white | black (`--text-on-light`) |
+| "Save this page" spacing | Tight to QR | `margin-bottom: 32px` added |
+
+---
+
+## 15. Asset updates
+
+| Asset | Change |
+|---|---|
+| `certifications.png` | Replaced with dark-bg-friendly version (CE, FCC, ICC, Blue UAS, NDAA) |
+| `NanoBrands.png` | Replaced with updated partner logos (Teal, Agility Robotics, Good Friday Robotics, Darkhive, +1) |
+| Gotham fonts | `Gotham-Bold.otf`, `Gotham-Medium.otf`, `Gotham-Book.otf` added to `assets/fonts/` |
+| `boostgif.gif` | Replaced with optimized version (<100MB for GitHub) |
+
+---
+
+## 16. Content updates (Milestone 2 — 5 pages with spec changes)
+
+Spec values updated per CSV files in `Updated specs/` for: Boost, Mini, Nano², OEM, Wearable. Nano and Nimble had no content changes. Full diff documented in `Spec_diff_report.md`.
+
+---
+
+## Pending / verify
+
+| Item | Status | Notes |
+|---|---|---|
+| `Logo-Stacked.svg` | Verify | Check if SVG renders white on `#000` hero across all pages |
+| `nimbleCerts.png`, `oemCerts.png`, `WeareableCerts.png` | Verify | May need dark-bg-friendly replacements like `certifications.png` |
+| Deployed by logos (all pages except Nano) | Verify | `MiniBrands.png`, `nimbleBrands.png`, `OEMbrands.png`, `weareableBrands.png` — check rendering on `#EEEEEE` |
+| Deployed by logo containers | Pending | Client requested square corners — requires individual logo assets or new composites |
