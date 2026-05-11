@@ -7,31 +7,41 @@
 	<link href="../assets/css/stylev12-dark.css" rel="stylesheet">
 	<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 	<style>
-		/* Page-specific hero override for Boost */
-		.hero-holder {
-			background-image: none;
-			background-color: #000;
-			border-radius: 32px;
-			overflow: hidden;
+		/* Page-specific hero override for Boost — full bleed GIF with embedded title */
+		.boost-hero {
+			background-color: var(--surface-hero);
+			position: relative;
+		}
+		.boost-hero img.boost-gif {
+			width: 100%;
+			display: block;
+		}
+		.boost-hero .hero-logo {
+			position: absolute;
+			top: 25px;
+			left: 60px;
+			width: 111px;
+			z-index: 2;
+			filter: invert(1) hue-rotate(180deg);
+		}
+		.boost-hero .hero-action {
+			position: absolute;
+			top: 35px;
+			right: 25px;
+			z-index: 2;
+		}
+		.boost-hero .hero-action a {
+			color: #000000 !important;
+			border-color: #000000;
 		}
 	</style>
 	<title>Doodle Project - Boost</title>
 </head>
 <body>
-	<section class="hero">
-		<div class="hero-holder">
-			<img src="../assets/images/boostgif.gif" class="hero-product-img">
-			<img src="../assets/images/Logo-Stacked.svg" class="hero-logo">
-			<div class="hero-action"><a href="#tech" style="text-decoration:none; color:white;">Technical features</a></div>
-			<div class="hero-text-holder">
-				<div class="hero-title">
-					Boost
-				</div>
-				<div class="hero-subtitle">
-					High-power bi-directional amplifier for extended wireless range
-				</div>
-			</div>
-		</div>
+	<section class="boost-hero">
+		<img src="../assets/images/boostgif.gif" class="boost-gif">
+		<img src="../assets/images/Logo-Stacked.svg" class="hero-logo">
+		<div class="hero-action"><a href="#tech" style="text-decoration:none; color:white;">Technical features</a></div>
 	</section>
 	<section class="deployed">
 		<div class="deployed-title">Deployed by</div>

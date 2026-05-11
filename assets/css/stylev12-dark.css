@@ -83,8 +83,7 @@ body{
 
 .hero-action a:hover,
 .hero-action a:active{
-	border-width: 3px;
-	padding: 8px 18px;
+	box-shadow: inset 0 0 0 2px currentColor;
 }
 
 .hero-desc-holder{
@@ -248,21 +247,17 @@ body{
 
 /* === DEPLOYED BY === */
 .deployed{
-	background-color: var(--surface-callout-light);
+	background-color: var(--surface-body);
 	padding: 80px 60px;
 }
 
 .deployed-title{
-	color: var(--text-on-light);
+	color: var(--text-primary);
 	font-size: 62px;
 	width: 100%;
 	text-align: left;
 	font-family: var(--font-bold);
 	margin-bottom: 42px;
-}
-
-.deployed img{
-	filter: none;
 }
 
 /* === DOODLE ADVANTAGE — CARDS ONLY === */
