@@ -60,19 +60,21 @@ body{
 
 .hero-logo{
 	position: absolute;
-	top:25px;
-	left: 25px;
+	top:9px;
+	left: 42px;
 	width: 111px;
+	z-index: 2;
 }
 
 .hero-action{
 	font-family: var(--font-ui-bold);
 	position: absolute;
-	top:35px;
+	top:32px;
 	right:25px;
 	color: var(--text-primary);
 	font-size:17px;
 	cursor: pointer;
+	z-index: 2;
 }
 
 .hero-action a{
