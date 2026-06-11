@@ -196,8 +196,43 @@
 		<img src="assets/images/overview/slide-25.jpg" alt="Slide 25">
 		<img src="assets/images/overview/slide-26.jpg" alt="Slide 26">
 	</section>
+	<section class="footer">
+		<div class="footer-cont">
+			<div class="footer-sectiona">
+				<div class="footer-title">Learn more</div>
+				<img src="assets/images/QR-Nano2.png" style="width: 100%" alt="QR for Doodle Labs">
+			</div>
+			<div class="footer-sectionb">
+				<div class="form-container">
+					<div class="footer-title" style="margin-bottom: 32px;" id="secretbtn">Sign up to get in touch</div>
+					<input type="hidden" id="product_name" value="Company Overview">
+					<label>Name<span style="color:white">*</span></label>
+					<input type="text" id="name" placeholder="Name">
+					<label>Last Name<span style="color:white">*</span></label>
+					<input type="text" id="lastname" placeholder="Last Name">
+					<label>Company<span style="color:white">*</span></label>
+					<input type="text" id="company" placeholder="Company">
+					<label>Email<span style="color:white">*</span></label>
+					<input type="email" id="email" placeholder="Email">
+					<div class="form-btn" id="formbtn">Submit</div>
+					<div class="popup-holder">
+						<div class="popup" id="ok">
+							<img src="assets/images/Check.png" style="width:57px; height: 57px;">
+							<div class="popup-text">The contact information has been submitted successfully.</div>
+						</div>
+						<div class="popup" id="wrong">
+							<img src="assets/images/wrong.webp" style="width:57px; height: 57px;">
+							<div class="popup-text">Please fill all the form fields.</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 </body>
 </html>
+<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/formv5.js"></script>
 <script>
 (function() {
 	document.addEventListener('click', function(e) {
