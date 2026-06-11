@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=0">
+	<link href="assets/css/stylev12-dark.css" rel="stylesheet">
+	<style>
+		/* === PRODUCT NAV === */
+		.product-nav {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			z-index: 100;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			background-color: #000000;
+			padding: 0 40px;
+			height: 56px;
+		}
+		.product-nav-logo {
+			height: 32px;
+			flex-shrink: 0;
+		}
+		.product-nav-tabs {
+			display: flex;
+			align-items: center;
+			height: 100%;
+			gap: 0;
+		}
+		.product-nav-tab {
+			font-family: var(--font-medium);
+			font-size: 16px;
+			color: rgba(255,255,255,0.55);
+			text-decoration: none;
+			padding: 0 24px;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			border-bottom: 2px solid transparent;
+			transition: color 0.2s ease, border-color 0.2s ease;
+			white-space: nowrap;
+			-webkit-tap-highlight-color: transparent;
+		}
+		.product-nav-tab:hover,
+		.product-nav-tab:active {
+			color: #FFFFFF;
+		}
+		.product-nav-tab.active {
+			color: #FFEA9E;
+			border-bottom-color: #FFEA9E;
+		}
+		.product-nav-separator {
+			width: 1px;
+			height: 20px;
+			background-color: rgba(255,255,255,0.25);
+			margin: 0 8px;
+			flex-shrink: 0;
+		}
+		.product-nav-cta {
+			flex-shrink: 0;
+			visibility: hidden;
+		}
+		.product-nav-cta a {
+			font-family: var(--font-medium);
+			font-size: 14px;
+			color: #FFFFFF;
+			text-decoration: none;
+			border: 1px solid #FFFFFF;
+			padding: 8px 20px;
+			white-space: nowrap;
+		}
+		/* === BIG PICTURE === */
+		.bigpicture {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			min-height: 100vh;
+			padding-top: 56px;
+			background-color: #000000;
+		}
+		.bigpicture img {
+			width: 100%;
+			height: calc(100vh - 56px);
+			object-fit: contain;
+		}
+	</style>
+	<title>Doodle Labs - Big Picture</title>
+</head>
+<body>
+	<nav class="product-nav">
+		<img src="assets/images/Logo-Stacked.svg" class="product-nav-logo" alt="Doodle Labs">
+		<div class="product-nav-tabs">
+			<a href="nano2.html" class="product-nav-tab">Nano²</a>
+			<a href="mini.html" class="product-nav-tab">Mini</a>
+			<a href="oem.html" class="product-nav-tab">OEM</a>
+			<a href="boost.html" class="product-nav-tab">Boost</a>
+			<a href="wearable.html" class="product-nav-tab">Wearable</a>
+			<div class="product-nav-separator"></div>
+			<a href="bigpicture.html" class="product-nav-tab active">Big Picture</a>
+		</div>
+		<div class="product-nav-cta">
+			<a href="#">Technical features</a>
+		</div>
+	</nav>
+
+	<section class="bigpicture">
+		<img src="assets/images/big-picture.png" alt="Any environment. Any condition.">
+	</section>
+</body>
+</html>
