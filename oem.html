@@ -70,6 +70,75 @@
 			color: #FFEA9E;
 			border-bottom-color: #FFEA9E;
 		}
+		/* === PRODUCTS DROPDOWN === */
+		.nav-dropdown {
+			position: relative;
+			height: 100%;
+			display: flex;
+			align-items: center;
+		}
+		.nav-dropdown-toggle {
+			font-family: var(--font-medium);
+			font-size: 16px;
+			color: rgba(255,255,255,0.55);
+			background: none;
+			border: none;
+			padding: 0 24px;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			gap: 6px;
+			cursor: pointer;
+			white-space: nowrap;
+			-webkit-tap-highlight-color: transparent;
+			transition: color 0.2s ease;
+		}
+		.nav-dropdown-toggle:hover,
+		.nav-dropdown-toggle:active {
+			color: #FFFFFF;
+		}
+		.nav-dropdown-toggle.has-active {
+			color: #FFEA9E;
+		}
+		.nav-dropdown-toggle svg {
+			width: 10px;
+			height: 6px;
+			fill: currentColor;
+			transition: transform 0.2s ease;
+		}
+		.nav-dropdown.open .nav-dropdown-toggle svg {
+			transform: rotate(180deg);
+		}
+		.nav-dropdown-menu {
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			background-color: #000000;
+			min-width: 180px;
+			padding: 8px 0;
+		}
+		.nav-dropdown.open .nav-dropdown-menu {
+			display: block;
+		}
+		.nav-dropdown-menu a {
+			font-family: var(--font-medium);
+			font-size: 15px;
+			color: rgba(255,255,255,0.55);
+			text-decoration: none;
+			display: block;
+			padding: 10px 24px;
+			white-space: nowrap;
+			transition: color 0.2s ease;
+			-webkit-tap-highlight-color: transparent;
+		}
+		.nav-dropdown-menu a:hover,
+		.nav-dropdown-menu a:active {
+			color: #FFFFFF;
+		}
+		.nav-dropdown-menu a.active {
+			color: #FFEA9E;
+		}
 		.product-nav-cta {
 			flex-shrink: 0;
 		}
@@ -94,13 +163,18 @@
 	<nav class="product-nav">
 		<img src="assets/images/Logo-Stacked.svg" class="product-nav-logo" alt="Doodle Labs">
 		<div class="product-nav-tabs">
-			<a href="nano2.html" class="product-nav-tab">Nano²</a>
-			<a href="mini.html" class="product-nav-tab">Mini</a>
-			<a href="oem.html" class="product-nav-tab active">OEM</a>
-			<a href="boost.html" class="product-nav-tab">Boost</a>
-			<a href="wearable.html" class="product-nav-tab">Wearable</a>
-			<span style="color:rgba(255,255,255,0.55);font-size:16px;margin:0 8px;display:flex;align-items:center">|</span>
 			<a href="bigpicture.html" class="product-nav-tab">Big Picture</a>
+			<a href="companyoverview.html" class="product-nav-tab">Company Overview</a>
+			<div class="nav-dropdown">
+				<button class="nav-dropdown-toggle has-active" onclick="this.parentElement.classList.toggle('open')">Products <svg viewBox="0 0 10 6"><path d="M0 0l5 6 5-6z"/></svg></button>
+				<div class="nav-dropdown-menu">
+					<a href="nano2.html">Nano²</a>
+					<a href="mini.html">Mini</a>
+					<a href="oem.html" class="active">OEM</a>
+					<a href="boost.html">Boost</a>
+					<a href="wearable.html">Wearable</a>
+				</div>
+			</div>
 		</div>
 		<div class="product-nav-cta">
 			<a href="#tech">Technical features</a>
@@ -300,6 +374,10 @@
 			nav.classList.remove('scrolled');
 		}
 	}, { passive: true });
+	document.addEventListener('click', function(e) {
+		var dd = document.querySelector('.nav-dropdown');
+		if (dd && !dd.contains(e.target)) dd.classList.remove('open');
+	});
 })();
 </script>
 <script type="text/javascript" src="assets/js/advantagesv6.js"></script>
